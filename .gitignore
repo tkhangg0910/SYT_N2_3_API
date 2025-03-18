@@ -3,6 +3,7 @@ BE/.env
 /BE/models/cache/*
 /BE/src/volumes/*
 /FE
-/BE/models/__pycache__
+/BE/models/cache
 /setup_resources/
 FE/package-lock.json
+/BE/models/__pycache__/*
