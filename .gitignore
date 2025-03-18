@@ -1,0 +1,8 @@
+/venv
+BE/.env
+/BE/models/cache/*
+/BE/src/volumes/*
+/FE
+/BE/models/__pycache__
+/setup_resources/
+FE/package-lock.json

@@ -1,0 +1,15 @@
+# transformers==4.44.2
+# bitsandbytes
+# huggingface_hub
+tensorflow 
+keras 
+keras_applications
+fastapi
+uvicorn
+timm
+# accelerate
+# spacy
+scikit-learn
+pymilvus
+milvus_lite
+google-generativeai
