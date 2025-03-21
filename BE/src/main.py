@@ -1,3 +1,5 @@
+import article_crawl as ac
+import url_extract as ue
 from piplines import OcrPipeLine, ImageEncoderPipeLine
 from fastapi import FastAPI, File, UploadFile, Path, HTTPException, Form, Request
 import uvicorn
@@ -21,6 +23,7 @@ import gc
 import tensorflow.keras.backend as K
 from dotenv import load_dotenv
 import os
+
 
 imgEncoder, ocrScanner ,vector_db= None, None, None
 @asynccontextmanager
@@ -212,6 +215,21 @@ async def addImg(
     # else:
     #     return {"error": "Failed to encode all images."}
     
+@app.post("/get_invalid_keyword/url")
+async def get_invalid_keyword(url: str):
+    DEFAULT_KEYWORDS = ["mới nhất", "hiện đại nhất", "độc quyền", "duy nhất", "hoàn toàn", "nhất", "hoàn toàn 100%"]
+    if not url:
+        return {"error": "Invalid URL."}
+    else:
+        article = ac.crawl_and_clean_article(url=url)
+
+        filtered_keywords = ue.extract_keywords(article["content"], DEFAULT_KEYWORDS)
+        return {"data": filtered_keywords}
+
+
+
+
+
 
 # path ="D:/333.jpg"
 # model, tokenizer, generation_config  = vintern_1b_v2()
