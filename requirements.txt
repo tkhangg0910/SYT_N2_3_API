@@ -13,3 +13,9 @@ scikit-learn
 pymilvus
 milvus_lite
 google-generativeai
+flashtext==2.7
+newspaper3k==0.2.8
+streamlit==1.43.0
+yake==0.4.8
+lxml_html_clean==0.4.1
+PyPDF2==3.0.1
